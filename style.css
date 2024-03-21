@@ -1,0 +1,42 @@
+.grid {
+    display: grid;
+    grid-template-columns: 0fr 1fr;
+    column-gap: 1em;
+    row-gap: 0.5em;
+}
+.grid > label {
+    display: contents;
+}
+
+.grid > label > span {
+    text-wrap: nowrap;
+}
+
+main {
+    overflow-x: auto;
+}
+
+footer {
+    padding: 1em 0;
+    text-align: center;
+}
+
+html {
+    background-color: rgb(241 241 241);
+}
+body {
+    margin: 0;
+
+    max-width: 35em;
+    margin: auto;
+    background-color: white;
+    padding: 0 2em;
+
+    border-color: rgb(225 227 225);
+    border-width: 0px 1px;
+    border-style: solid;
+}
+
+textarea {
+    resize: vertical;
+}

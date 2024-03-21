@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer src="./dist/index.js"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <main>
+        <section id="section-1">
+            <h1>Задание № 1</h1>
+            <p>
+                Напишите дешифратор для &lt;&lt;ШИФРА ПРОСТОЙ ЗАМЕНЫ&gt;&gt; и расшифруйте предоставленную строку:<br>
+                <code>Иржьншё р ирвзнь из цьлезуч, меь изйёагсиь.</code><br>
+                Алфавит для замены: <code>ё ц к н ш з ъ ы а р л ж я с и ь ю й у е г щ х ф в п о д э ч м т б</code>
+            </p>
+            <fieldset>
+                <div class="grid">
+                    <label>
+                        <span>алфавит</span>
+                        <input value="ё ц к н ш з ъ ы а р л ж я с и ь ю й у е г щ х ф в п о д э ч м т б" name="alphabet" type="text">
+                    </label>
+                    <label>
+                        <span>вход</span>
+                        <input value="Иржьншё р ирвзнь из цьлезуч, меь изйёагсиь." name="input" type="text">
+                    </label>
+                    <label>
+                        <span>выход</span>
+                        <input disabled name="output" type="text">
+                    </label>
+                </div>
+                <hr>
+                <button name="run">run</button>
+            </fieldset>
+        </section>
+        <section id="section-2">
+            <h1>Задание № 2</h1>
+            <p>Алгоритм шифрования ГОСТ 28147 89</p>
+            <p>
+                Зашифруйте строку: <code>Уровень культуры мужчины определяется его отношением к женщине.</code><br>
+                Алгоритмом шифрования ГОСТ 28147 89 в режиме гаммирование.<br>
+                Ключ для шифрования: <code>0779721958783071038427195875486813235948738003045421697717189300</code>
+            </p>
+            <p>Используйте узлы замены:</p>
+            <pre>
+    20   12   18   11   16   11   14   17
+    20   20   11   12   13   12   14   14
+    19   17   19   19   13   12   15   18
+    12   20   17   10   17   15   15   13
+    17   11   10   16   17   20   12   17
+    11   14   11   10   17   12   11   20
+    18   10   12   15   12   18   13   15
+    10   19   16   19   14   19   18   16
+    13   10   16   15   20   16   18   16
+    19   10   10   20   10   12   11   13
+    10   17   20   17   19   18   18   14
+    20   15   15   12   16   16   11   16
+    16   13   18   15   16   12   11   13
+    19   20   12   16   11   15   20   16
+    14   11   12   14   16   16   14   20
+    13   19   16   11   13   18   10   18
+            </pre>
+            <fieldset>
+                <div class="grid">
+                    <label>
+                        <span>ключ</span>
+                        <input value="0779721958783071038427195875486813235948738003045421697717189300" name="key" type="text">
+                    </label>
+                    <label>
+                        <span>узлы замены</span>
+                        <textarea name="nodes" cols="8" rows="16">20   12   18   11   16   11   14   17
+20   20   11   12   13   12   14   14
+19   17   19   19   13   12   15   18
+12   20   17   10   17   15   15   13
+17   11   10   16   17   20   12   17
+11   14   11   10   17   12   11   20
+18   10   12   15   12   18   13   15
+10   19   16   19   14   19   18   16
+13   10   16   15   20   16   18   16
+19   10   10   20   10   12   11   13
+10   17   20   17   19   18   18   14
+20   15   15   12   16   16   11   16
+16   13   18   15   16   12   11   13
+19   20   12   16   11   15   20   16
+14   11   12   14   16   16   14   20
+13   19   16   11   13   18   10   18</textarea>
+                    </label>
+                    <label>
+                        <span>тип входных данных</span>
+                        <select name="inputType">
+                            <option selected value="utf8">UTF-8</option>
+                            <option value="hex">HEX</option>
+                        </select>
+                    </label>
+                    <label>
+                        <span>вход</span>
+                        <textarea rows="6" name="input">Уровень культуры мужчины определяется его отношением к женщине.</textarea>
+                    </label>
+                    <label>
+                        <span>тип выходных данных</span>
+                        <select name="outputType">
+                            <option value="utf8">UTF-8</option>
+                            <option selected value="hex">HEX</option>
+                        </select>
+                    </label>
+                    <label>
+                        <span>выход</span>
+                        <textarea disabled rows="6" name="output"></textarea>
+                    </label>
+                </div>
+                <hr>
+                <button name="run">run</button>
+            </fieldset>
+        </section>
+        <section id="section-3">
+            <h1>Задание № 3</h1>
+            <p>Алгоритм шифрования rsa.</p>
+            <p>
+                Сгенерируйте открытый и закрытый ключи в алгоритме шифрования RSA, выбрав простые числа p = 631 и q = 443.<br>
+                Зашифруйте сообщение: <code>Многие люди подобны колбасам: чем их начинят, то и носят в себе.</code>
+            </p>
+            <fieldset>
+                <div class="grid">
+                    <label>
+                        <span>режим работы</span>
+                        <select name="type">
+                            <option value="encode">шифрование</option>
+                            <option value="decode">расшифровка</option>
+                        </select>
+                    </label>
+                    <label>
+                        <span>p</span>
+                        <input value="631" name="p" type="text">
+                    </label>
+                    <label>
+                        <span>q</span>
+                        <input value="443" name="q" type="text">
+                    </label>
+                    <label>
+                        <span>n</span>
+                        <input name="n" type="text">
+                    </label>
+                    <label>
+                        <span>e</span>
+                        <input name="e" type="text">
+                    </label>
+                    <label>
+                        <span>d</span>
+                        <input name="d" type="text">
+                    </label>
+                    <label>
+                        <span>тип входных данных</span>
+                        <select name="inputType">
+                            <option selected value="utf8">UTF-8</option>
+                            <option value="hex">HEX</option>
+                        </select>
+                    </label>
+                    <label>
+                        <span>вход</span>
+                        <textarea name="input" rows="2">Многие люди подобны колбасам: чем их начинят, то и носят в себе.</textarea>
+                    </label>
+                    <label>
+                        <span>тип выходных данных</span>
+                        <select name="outputType">
+                            <option value="utf8">UTF-8</option>
+                            <option selected value="hex">HEX</option>
+                        </select>
+                    </label>
+                    <label>
+                        <span>выход</span>
+                        <textarea disabled name="output" rows="15"></textarea>
+                    </label>
+                </div>
+                <hr>
+                <button name="keygen">generate keys</button>
+                <button name="run">run</button>
+            </fieldset>
+        </section>
+        <section id="section-4">
+            <h1>Задание № 4</h1>
+            <p>Функция хеширования.</p>
+            <p>
+                Реализовать алгоритм криптографической функции – SHA224.<br>
+                Зашифруйте сообщение: <code>Без любви жить легче.</code>
+            </p>
+            <fieldset>
+                <div class="grid">
+                    <label>
+                        <span>вход</span>
+                        <input value="Без любви жить легче." name="input" type="text">
+                    </label>
+                    <label>
+                        <span>выход</span>
+                        <input disabled name="output" type="text">
+                    </label>
+                </div>
+                <button name="run">run</button>
+            </fieldset>
+        </section>
+        <section id="section-5">
+            <h1>Задание № 5</h1>
+            <p>Электронная цифровая подпись.</p>
+            <p>
+                Используя хеш-образ строки: <code>Из нас как из дерева — или дубина, или икона.</code><br>
+                И вычислите электронную цифровую подпись по схеме RSA.
+            </p>
+            <fieldset>
+                <div class="grid">
+                    <label>
+                        <span>режим работы</span>
+                        <select name="type">
+                            <option value="encode">шифрование</option>
+                            <option value="decode">расшифровка</option>
+                        </select>
+                    </label>
+                    <label>
+                        <span>p</span>
+                        <input value="631" name="p" type="text">
+                    </label>
+                    <label>
+                        <span>q</span>
+                        <input value="443" name="q" type="text">
+                    </label>
+                    <label>
+                        <span>n</span>
+                        <input name="n" type="text">
+                    </label>
+                    <label>
+                        <span>e</span>
+                        <input name="e" type="text">
+                    </label>
+                    <label>
+                        <span>d</span>
+                        <input name="d" type="text">
+                    </label>
+                    <label>
+                        <span>тип входных данных</span>
+                        <select name="inputType">
+                            <option selected value="utf8">UTF-8</option>
+                            <option value="hex">HEX</option>
+                        </select>
+                    </label>
+                    <label>
+                        <span>вход</span>
+                        <textarea name="input" rows="2">Из нас как из дерева — или дубина, или икона.</textarea>
+                    </label>
+                    <label>
+                        <span>тип выходных данных</span>
+                        <select name="outputType">
+                            <option value="utf8">UTF-8</option>
+                            <option selected value="hex">HEX</option>
+                        </select>
+                    </label>
+                    <label>
+                        <span>выход</span>
+                        <textarea disabled name="output" rows="15"></textarea>
+                    </label>
+                </div>
+                <hr>
+                <button name="keygen">generate keys</button>
+                <button name="run">run</button>
+            </fieldset>
+        </section>
+    </main>
+    <footer>
+        <span>Сухов И.Е.</span>
+        <span>ПИБ-4301</span><br>
+        <span>2024</span>
+    </footer>
+</body>
+</html>

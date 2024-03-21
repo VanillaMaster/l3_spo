@@ -1,0 +1,13 @@
+{
+  "type": "module",
+  "scripts": {
+    "watch": "rollup -c -w"
+  },
+  "dependencies": {
+    "@vanilla/sha": "github:vanillamaster/sha256-sha224#semver:1.1.1"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "rollup": "^4.12.1"
+  }
+}
